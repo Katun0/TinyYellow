@@ -15,7 +15,7 @@ const CreatePost = () => {
   const [body, setBody] = useState("");
   const [tags, setTags] = useState("");
   const [formError, setFormError] = useState("");
-  const API_BASE = process.env.REACT_APP_API_BASE || "https://tiny-yellow-1et1.vercel.app/api";
+  const API_BASE = process.env.REACT_APP_API_BASE || "https://tiny-yellow-ekt9po3hv-joao-victor-surdis-projects.vercel.app//api";
   const [loading, setLoading] = useState(false);
 
   const { user } = useAuthValue();
