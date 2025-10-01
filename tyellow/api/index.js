@@ -7,7 +7,12 @@ import serverless from 'serverless-http';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options("*", cors());
 app.use(express.json());
 
 // Conexão com o banco Railway
@@ -136,3 +141,4 @@ app.get('/api/posts/list', async (_req, res) => {
 });
 
 export const handler = serverless(app);
+
